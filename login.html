@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <title>Login - KULIAH PAKAR</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+    />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 50px auto;
+      }
+      h1 {
+        color: #333;
+      }
+      .button {
+        margin-top: 20px;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      .button:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+        <a
+          href="login.html"
+          class="w3-bar-item w3-button w3-padding-large w3-theme-d4"
+          >LPPM</a
+        >
+        <a href="login.html" class="w3-bar-item w3-button w3-padding-large"
+          >Login</a
+        >
+      </div>
+    </div>
+
+    <main>
+      <div class="container">
+        <h1>Masukkan Email dan Password Anda</h1>
+        <form id="loginForm" onsubmit="return validateForm()">
+          <input
+            type="email"
+            id="email"
+            placeholder="Email"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-top: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+            style="
+              width: 100%;
+              padding: 10px;
+              margin-top: 10px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+            "
+          />
+          <div class="error" id="errorMessage"></div>
+          <button type="submit" class="button">Login</button>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      function validateForm() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Contoh validasi sederhana
+        if (email === "admin" && password === "123") {
+          // Ganti dengan logika validasi Anda
+          window.location.href = "dashboard.html"; // Redirect ke halaman dashboard
+          return false; // Mencegah form dari pengiriman
+        } else {
+          errorMessage.textContent =
+            "Email atau password salah. Silakan coba lagi.";
+          return false; // Mencegah form dari pengiriman
+        }
+      }
+    </script>
+  </body>
+</html>
